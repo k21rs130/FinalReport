@@ -49,23 +49,41 @@
                 })
         }
 
-        function searchLevelLT() {
-            let level = parseInt($("#level").val());
+        function sortA() {
             let TestDataClass = ncmb.DataStore(db);
-            TestDataClass
-                .lessThan("level", level)
-                .fetchAll()
+            TestDataClass.order("a", true).fetchAll()
                 .then(function(results) {
                     showResults(results);
                 })
         }
 
-        function searchLevelGT() {
-            let level = parseInt($("#level").val());
+        function sortB() {
             let TestDataClass = ncmb.DataStore(db);
-            TestDataClass
-                .greaterThan("level", level)
-                .fetchAll()
+            TestDataClass.order("b", true).fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
+        function sortC() {
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.order("c", true).fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
+        function sortD() {
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.order("d", true).fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
+        function sortS() {
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.order("s", true).fetchAll()
                 .then(function(results) {
                     showResults(results);
                 })
@@ -112,8 +130,12 @@
         <button class="btn" onclick="searchType()">type</button>
         <br>
         <button class="btn" onclick="sortH()">Sort H</button>
-        <button class="btn" onclick="searchLevel()">Level</button>
-        <button class="btn" onclick="searchLevelGT()">Level &gt</button>
+        <button class="btn" onclick="sortA()">Sort A</button>
+        <button class="btn" onclick="sortB()">Sort B</button>
+        <br>
+        <button class="btn" onclick="sortC()">Sort C</button>
+        <button class="btn" onclick="sortD()">Sort D</button>
+        <button class="btn" onclick="sortS()">Sort S</button>
     </div>
     <div id="message">message area</div>
 </body>
