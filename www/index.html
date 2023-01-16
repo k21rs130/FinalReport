@@ -32,6 +32,15 @@
                 })
         }
 
+        function searchType() {
+            let type = $("#type").val();
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.regularExpressionTo("type", type).fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
         function searchLevel() {
             let level = parseInt($("#level").val());
             let TestDataClass = ncmb.DataStore(db);
@@ -95,12 +104,13 @@
         <input id="name" type="text" placeholder="monster name">
     </div>
     <div>
-        <label for="level">level:</label>
-        <input id="level" type="number" placeholder="monster level">
+        <label for="type">type:</label>
+        <input id="type" type="text" placeholder="monster type">
     </div>
     <div id="button">
         <button class="btn" onclick="fetchAll()">Fetch All</button>
         <button class="btn" onclick="searchName()">Name</button>
+        <button class="btn" onclick="searchType()">type</button>
         <br>
         <button class="btn" onclick="searchLevelLT()">Level &lt</button>
         <button class="btn" onclick="searchLevel()">Level</button>
