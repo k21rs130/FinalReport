@@ -89,6 +89,14 @@
                 })
         }
 
+        function sortTotal() {
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.order("total", true).fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
         function showResults(results) {
             // テーブルのヘッダを生成
             let msg = "<table><tr><th>name</th><th>type</th><th>H</th><th>A</th><th>B</th><th>C</th><th>D</th><th>S</th><th>total</th><th>*</th></tr>";
@@ -136,6 +144,8 @@
         <button class="btn" onclick="sortC()">Sort C</button>
         <button class="btn" onclick="sortD()">Sort D</button>
         <button class="btn" onclick="sortS()">Sort S</button>
+        <br>
+        <button class="btn" onclick="sortTotal()">Sort Total</button>
     </div>
     <div id="message">message area</div>
 </body>
