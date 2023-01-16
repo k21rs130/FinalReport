@@ -41,10 +41,9 @@
                 })
         }
 
-        function searchLevel() {
-            let level = parseInt($("#level").val());
+        function sortH() {
             let TestDataClass = ncmb.DataStore(db);
-            TestDataClass.equalTo("level", level).fetchAll()
+            TestDataClass.order("h", true).fetchAll()
                 .then(function(results) {
                     showResults(results);
                 })
@@ -112,7 +111,7 @@
         <button class="btn" onclick="searchName()">Name</button>
         <button class="btn" onclick="searchType()">type</button>
         <br>
-        <button class="btn" onclick="searchLevelLT()">Level &lt</button>
+        <button class="btn" onclick="sortH()">Sort H</button>
         <button class="btn" onclick="searchLevel()">Level</button>
         <button class="btn" onclick="searchLevelGT()">Level &gt</button>
     </div>
