@@ -65,14 +65,20 @@
 
         function showResults(results) {
             // テーブルのヘッダを生成
-            let msg = "<table><tr><th>name</th><th>type1</th><th>type2</th><th>total</th></tr>";
+            let msg = "<table><tr><th>name</th><th>type</th><th>H</th><th>A</th><th>B</th><th>C</th><th>D</th><th>S</th><th>total</th><th>*</th></tr>";
             for (let i = 0; i < results.length; i++) {
                 // 各データを収めた表の列を生成
                 msg += "<tr>";
                 msg += "<td>" + results[i].name + "</td>";
-                msg += "<td class='num'>" + results[i].type1 + "</td>";
-                msg += "<td class='num'>" + results[i].type2 + "</td>";
+                msg += "<td class='num'>" + results[i].type + "</td>";
+                msg += "<td class='num'>" + results[i].h + "</td>";
+                msg += "<td class='num'>" + results[i].a + "</td>";
+                msg += "<td class='num'>" + results[i].b + "</td>";
+                msg += "<td class='num'>" + results[i].c + "</td>";
+                msg += "<td class='num'>" + results[i].d + "</td>";
+                msg += "<td class='num'>" + results[i].s + "</td>";
                 msg += "<td class='num'>" + results[i].total + "</td>";
+                msg += "<td class='num'>" + results[i].regulation + "</td>";
                 msg += "</tr>";
             }
             // テーブルのテイラを生成
