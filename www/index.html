@@ -97,6 +97,15 @@
                 })
         }
 
+        function RegName() {
+            let regulation = $("#regulation").val();
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.equalTo("regulation", regulation).order("name", false).fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
         function RegTotal() {
             let regulation = $("#regulation").val();
             let TestDataClass = ncmb.DataStore(db);
@@ -159,7 +168,8 @@
         <button class="btn" onclick="sortS()">Sort S</button>
         <br>
         <button class="btn" onclick="sortTotal()">Sort Total</button>
-        <button class="btn" onclick="RegTotal()">Reg Total</button>
+        <button class="btn" onclick="RegName()">RegName</button>
+        <button class="btn" onclick="RegTotal()">RegTotal</button>
     </div>
     <div id="message">message area</div>
 </body>
