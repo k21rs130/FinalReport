@@ -97,6 +97,15 @@
                 })
         }
 
+        function RegTotal() {
+            let regulation = $("#regulation").val();
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.equalTo("regulation", regulation).order("total", true).fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
         function showResults(results) {
             // テーブルのヘッダを生成
             let msg = "<table><tr><th>name</th><th>type</th><th>H</th><th>A</th><th>B</th><th>C</th><th>D</th><th>S</th><th>total</th><th>*</th></tr>";
@@ -132,10 +141,14 @@
         <label for="type">type:</label>
         <input id="type" type="text" placeholder="monster type">
     </div>
+     <div>
+        <label for="regulation">reg:</label>
+        <input id="regulation" type="text" placeholder="regulation">
+    </div>
     <div id="button">
         <button class="btn" onclick="fetchAll()">Fetch All</button>
         <button class="btn" onclick="searchName()">Name</button>
-        <button class="btn" onclick="searchType()">type</button>
+        <button class="btn" onclick="searchType()">Type</button>
         <br>
         <button class="btn" onclick="sortH()">Sort H</button>
         <button class="btn" onclick="sortA()">Sort A</button>
@@ -146,6 +159,7 @@
         <button class="btn" onclick="sortS()">Sort S</button>
         <br>
         <button class="btn" onclick="sortTotal()">Sort Total</button>
+        <button class="btn" onclick="RegTotal()">Reg.Total</button>
     </div>
     <div id="message">message area</div>
 </body>
