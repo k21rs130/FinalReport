@@ -1,9 +1,10 @@
 /**/
 body {
-  background-color: aqua;
+  background-color: skyblue;
 }
 h1 {
-  background-color: yellow;
+  background-color: orangered;
+  text-align: center;
 }
 
 label {
@@ -28,8 +29,8 @@ input {
   height: 4ex;
   width: 5em;
   border-radius: 10px;
-  color: white;
-  background-color: blue;
+  color: black;
+  background-color: violet;
 }
 
 #message {
